@@ -56,7 +56,8 @@ function icf_installeer( $opties = array() ) {
 
 	/* 1. Basisinstellingen */
 	if ( ! get_option( 'permalink_structure' ) ) {
-		update_option( 'permalink_structure', '/%postname%/' );
+		global $wp_rewrite;
+		$wp_rewrite->set_permalink_structure( '/%postname%/' );
 		$log[] = 'Mooie adressen ingesteld (/%postname%/).';
 	}
 	if ( ! get_option( 'timezone_string' ) ) {
@@ -208,6 +209,11 @@ function icf_installeer( $opties = array() ) {
 
 	/* 7. Adressen (/en/, /fa/, /ar/) opnieuw laten opbouwen bij het volgende bezoek */
 	delete_option( 'rewrite_rules' );
+	/* Op een echte server (Apache) heeft WordPress een .htaccess nodig voor de mooie adressen. */
+	require_once ABSPATH . 'wp-admin/includes/misc.php';
+	if ( got_mod_rewrite() && save_mod_rewrite_rules() ) {
+		$log[] = '.htaccess bijgewerkt voor de mooie adressen.';
+	}
 	update_option( 'icf_geinstalleerd', current_time( 'mysql' ) );
 	$log[] = 'Klaar.';
 	return $log;
