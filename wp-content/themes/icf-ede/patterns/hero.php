@@ -3,7 +3,7 @@
  * Title: Welkom (fotobanner)
  * Slug: icf-ede/hero
  * Categories: icf-ede
- * Description: Grote foto over de volle breedte met welkomsttekst, eerstvolgende bijeenkomst en knoppen. Vervang de foto via het blok "Omslag".
+ * Description: Grote foto over de volle breedte met welkomsttekst en knoppen. Vervang de foto via het blok "Omslag".
  */
 
 require_once get_template_directory() . '/inc/teksten.php';
@@ -21,10 +21,6 @@ $icf_img = 'https://images.unsplash.com/photo-1679579664774-da4283cab147?auto=fo
 <!-- wp:paragraph {"className":"icf-hero-tekst","fontSize":"groot"} -->
 <p class="icf-hero-tekst has-groot-font-size"><?php echo icf_pt( 'hero_tekst' ); ?></p>
 <!-- /wp:paragraph -->
-
-<!-- wp:shortcode -->
-[icf_volgende_bijeenkomst]
-<!-- /wp:shortcode -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)"><!-- wp:button -->
