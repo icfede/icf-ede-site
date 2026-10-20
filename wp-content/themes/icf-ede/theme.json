@@ -11,12 +11,12 @@
 				{
 					"slug": "room",
 					"name": "Room",
-					"color": "#FBF6EE"
+					"color": "#FAF6F1"
 				},
 				{
 					"slug": "zand",
 					"name": "Zand",
-					"color": "#EFE3D0"
+					"color": "#EFE6DC"
 				},
 				{
 					"slug": "wit",
@@ -24,9 +24,19 @@
 					"color": "#FFFFFF"
 				},
 				{
-					"slug": "terracotta",
-					"name": "Terracotta",
-					"color": "#B9542F"
+					"slug": "paars",
+					"name": "Paars (logo)",
+					"color": "#8E5A9B"
+				},
+				{
+					"slug": "paars-donker",
+					"name": "Paars donker",
+					"color": "#6E4279"
+				},
+				{
+					"slug": "lila",
+					"name": "Lila",
+					"color": "#C9A3D3"
 				},
 				{
 					"slug": "honing",
@@ -34,14 +44,9 @@
 					"color": "#E7AE3F"
 				},
 				{
-					"slug": "olijf",
-					"name": "Olijf",
-					"color": "#34493A"
-				},
-				{
-					"slug": "koffie",
-					"name": "Koffie",
-					"color": "#2B211C"
+					"slug": "nachtblauw",
+					"name": "Nachtblauw (logo)",
+					"color": "#1F2A3C"
 				}
 			]
 		},
@@ -149,7 +154,7 @@
 	"styles": {
 		"color": {
 			"background": "var(--wp--preset--color--room)",
-			"text": "var(--wp--preset--color--koffie)"
+			"text": "var(--wp--preset--color--nachtblauw)"
 		},
 		"spacing": {
 			"padding": {
@@ -166,7 +171,7 @@
 		"elements": {
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--terracotta)"
+					"text": "var(--wp--preset--color--paars)"
 				}
 			},
 			"heading": {
@@ -177,7 +182,7 @@
 					"letterSpacing": "-0.02em"
 				},
 				"color": {
-					"text": "var(--wp--preset--color--olijf)"
+					"text": "var(--wp--preset--color--nachtblauw)"
 				}
 			},
 			"h1": {
@@ -197,7 +202,7 @@
 			},
 			"button": {
 				"color": {
-					"background": "var(--wp--preset--color--terracotta)",
+					"background": "var(--wp--preset--color--paars)",
 					"text": "var(--wp--preset--color--wit)"
 				},
 				"border": {
@@ -216,7 +221,7 @@
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--olijf)"
+						"background": "var(--wp--preset--color--nachtblauw)"
 					}
 				}
 			}
@@ -236,7 +241,7 @@
 				"elements": {
 					"link": {
 						"color": {
-							"text": "var(--wp--preset--color--olijf)"
+							"text": "var(--wp--preset--color--nachtblauw)"
 						},
 						"typography": {
 							"textDecoration": "none"

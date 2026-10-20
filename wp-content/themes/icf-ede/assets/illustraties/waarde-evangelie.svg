@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="evangelie">
-<circle cx="48" cy="48" r="46" fill="#EFE3D0"/>
-<g stroke="#E7AE3F" stroke-width="4" stroke-linecap="round"><line x1="26.0" y1="44.0" x2="16.0" y2="44.0"/><line x1="28.9" y1="33.0" x2="20.3" y2="28.0"/><line x1="37.0" y1="24.9" x2="32.0" y2="16.3"/><line x1="48.0" y1="22.0" x2="48.0" y2="12.0"/><line x1="59.0" y1="24.9" x2="64.0" y2="16.3"/><line x1="67.1" y1="33.0" x2="75.7" y2="28.0"/><line x1="70.0" y1="44.0" x2="80.0" y2="44.0"/></g><path d="M44 22 h8 v14 h12 v8 h-12 v28 h-8 v-28 h-12 v-8 h12 Z" fill="#B9542F" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="48" cy="48" r="46" fill="#EFE6DC"/>
+<g stroke="#E7AE3F" stroke-width="4" stroke-linecap="round"><line x1="26.0" y1="44.0" x2="16.0" y2="44.0"/><line x1="28.9" y1="33.0" x2="20.3" y2="28.0"/><line x1="37.0" y1="24.9" x2="32.0" y2="16.3"/><line x1="48.0" y1="22.0" x2="48.0" y2="12.0"/><line x1="59.0" y1="24.9" x2="64.0" y2="16.3"/><line x1="67.1" y1="33.0" x2="75.7" y2="28.0"/><line x1="70.0" y1="44.0" x2="80.0" y2="44.0"/></g><path d="M44 22 h8 v14 h12 v8 h-12 v28 h-8 v-28 h-12 v-8 h12 Z" fill="#8E5A9B" stroke="#1F2A3C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 </svg>
