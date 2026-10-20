@@ -1,0 +1,11 @@
+title: خانه
+slug: fa-home
+order: 1
+key: home
+---
+@pattern hero
+@pattern zondag
+@pattern bijeenkomsten
+@pattern missie-teaser
+@pattern kaarten
+@pattern geven

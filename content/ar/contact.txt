@@ -1,0 +1,22 @@
+title: اتصل بنا
+slug: ar-ittisal
+order: 4
+key: contact
+---
+هل تريد مزيدًا من المعلومات، أو تودّ التعرّف علينا أولًا؟ راسلنا بكل سرور.
+
+**البريد الإلكتروني:** [contact@icfede.nl](mailto:contact@icfede.nl)
+
+**مكان الاجتماعات:** مدرسة باسبرخ (Paasbergschool)، Kleefsehoek 1A, 6711 SP Ede ([عرض الطريق](https://maps.google.com/?q=Kleefsehoek+1A+Ede))
+
+## المؤسسة
+
+تتولّى مسؤولية ICF Ede مؤسسة Stichting ICF Ede التي تأسست في 17 تموز/يوليو 2018. والمؤسسة مسجّلة في غرفة التجارة الهولندية (KvK) تحت الرقم 72164654، ورقم RSIN هو 859011677.
+
+## التقارير السنوية
+
+اقرأ تقاريرنا السنوية (باللغة الهولندية) لمعرفة المزيد عن أنشطتنا وأمورنا المالية.
+
+- [التقرير السنوي 2025](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2025.pdf)
+- [التقرير السنوي 2024](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2024.pdf)
+- [التقرير السنوي 2023](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2023.pdf)

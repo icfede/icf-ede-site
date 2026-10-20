@@ -1,0 +1,56 @@
+# Zet thema + plugin op de server.
+#  - push naar `main`          -> staging (team bekijkt het daar)
+#  - handmatig "Run workflow"  -> kies staging of productie
+#
+# Alleen code gaat via Git. Pagina's, rooster en media beheer je in wp-admin
+# (en kopieer je met de staging-knop van je host of WP Migrate).
+#
+# Benodigde secrets (Settings > Secrets and variables > Actions), per environment:
+#   SSH_HOST, SSH_USER, SSH_KEY (private key), WP_PATH (bijv. /home/icf/public_html)
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      omgeving:
+        description: "Waarheen?"
+        type: choice
+        options: [staging, productie]
+        default: staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event_name == 'push' && 'staging' || inputs.omgeving }}
+    env:
+      SERVER_INGESTELD: ${{ secrets.SSH_HOST != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: PHP-syntax controleren
+        run: find wp-content -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Nog geen server ingesteld?
+        if: env.SERVER_INGESTELD != 'true'
+        run: |
+          echo "::notice::Nog geen SSH-gegevens voor deze omgeving. Alleen de PHP-controle is gedaan; er is niets geüpload."
+
+      - name: SSH-sleutel klaarzetten
+        if: env.SERVER_INGESTELD == 'true'
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Thema en plugin uploaden
+        if: env.SERVER_INGESTELD == 'true'
+        run: |
+          for dir in themes/icf-ede plugins/icf-ede-bijeenkomsten; do
+            rsync -az --delete -e "ssh -i ~/.ssh/id_deploy" \
+              "wp-content/$dir/" \
+              "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WP_PATH }}/wp-content/$dir/"
+          done

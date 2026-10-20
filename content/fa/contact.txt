@@ -1,0 +1,22 @@
+title: تماس با ما
+slug: fa-tamas
+order: 4
+key: contact
+---
+اطلاعات بیشتری می‌خواهی، یا دوست داری اول با ما آشنا شوی؟ با خیال راحت به ما ایمیل بزن.
+
+**ایمیل:** [contact@icfede.nl](mailto:contact@icfede.nl)
+
+**محل جلسات:** مدرسهٔ پاسبرخ (Paasbergschool)، Kleefsehoek 1A, 6711 SP Ede ([مسیریابی](https://maps.google.com/?q=Kleefsehoek+1A+Ede))
+
+## سازمان
+
+مسئولیت ICF Ede بر عهدهٔ بنیاد Stichting ICF Ede است که در 17 ژوئیهٔ 2018 تأسیس شد. این بنیاد در اتاق بازرگانی هلند (KvK) با شمارهٔ 72164654 و شمارهٔ RSIN 859011677 ثبت شده است.
+
+## گزارش‌های سالانه
+
+برای اطلاعات بیشتر دربارهٔ فعالیت‌ها و امور مالی ما، گزارش‌های سالانه (به زبان هلندی) را بخوانید.
+
+- [گزارش سالانهٔ 2025](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2025.pdf)
+- [گزارش سالانهٔ 2024](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2024.pdf)
+- [گزارش سالانهٔ 2023](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2023.pdf)

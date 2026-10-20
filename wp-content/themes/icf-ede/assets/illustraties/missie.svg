@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Illustratie missie">
+<defs><clipPath id="c"><circle cx="240" cy="180" r="170"/></clipPath>
+<linearGradient id="l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7AE3F"/><stop offset="1" stop-color="#F5D48A"/></linearGradient></defs>
+<circle cx="240" cy="180" r="170" fill="#EFE3D0"/>
+<g clip-path="url(#c)">
+<rect x="0" y="0" width="480" height="300" fill="#F4E9D8"/>
+<path d="M40 300 H440 V380 H40 Z" fill="#D9825F"/>
+<path d="M176 300 L304 300 L360 380 L120 380 Z" fill="#F5D48A" opacity=".75"/>
+<!-- deurkozijn met boog -->
+<path d="M164 300 V140 a76 76 0 0 1 152 0 V300 Z" fill="#B9542F" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M180 300 V144 a60 60 0 0 1 120 0 V300 Z" fill="url(#l)" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- opengezwaaide deur -->
+<path d="M300 300 V144 L338 128 V316 Z" fill="#34493A" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="328" cy="226" r="4" fill="#E7AE3F"/>
+<!-- plant naast de deur -->
+<path d="M110 300 l6 -40 h32 l6 40 Z" fill="#B9542F" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M132 260 C120 230 100 222 92 214 M132 260 C134 226 128 206 136 186 M132 260 C150 236 166 230 174 226" fill="none" stroke="#34493A" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="96" cy="214" rx="12" ry="7" fill="#5E7A63" transform="rotate(-30 96 214)"/>
+<ellipse cx="136" cy="188" rx="7" ry="13" fill="#5E7A63"/>
+<ellipse cx="170" cy="226" rx="12" ry="7" fill="#5E7A63" transform="rotate(20 170 226)"/>
+<!-- tafel -->
+<rect x="196" y="300" width="186" height="12" rx="6" fill="#2B211C"/>
+<path d="M212 312 V352 M366 312 V352" stroke="#2B211C" stroke-width="6" stroke-linecap="round"/>
+<!-- theepot -->
+<path d="M214 300 C208 274 222 262 238 262 C254 262 268 274 262 300 Z" fill="#B9542F" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M262 280 C274 276 278 266 284 262" fill="none" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M214 278 C202 276 202 290 214 292" fill="none" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M230 262 a8 6 0 0 1 16 0" fill="#D9825F" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- theeglaasjes -->
+<path d="M292 296 c-5 -6 -3 -12 0 -15 c-3 -3 -3 -9 1 -12 h12 c4 3 4 9 1 12 c3 3 5 9 0 15 Z" fill="#F7EBD6" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M292 293 c-2 -4 -1 -8 1 -10 h12 c2 2 3 6 1 10 Z" fill="#B9542F"/><ellipse cx="299" cy="298" rx="13" ry="3" fill="#FBF6EE" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M322 296 c-5 -6 -3 -12 0 -15 c-3 -3 -3 -9 1 -12 h12 c4 3 4 9 1 12 c3 3 5 9 0 15 Z" fill="#F7EBD6" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M322 293 c-2 -4 -1 -8 1 -10 h12 c2 2 3 6 1 10 Z" fill="#B9542F"/><ellipse cx="329" cy="298" rx="13" ry="3" fill="#FBF6EE" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- koffiekop -->
+<path d="M348 282 h24 v10 a8 8 0 0 1 -8 8 h-8 a8 8 0 0 1 -8 -8 Z" fill="#FBF6EE" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M372 286 a5 5 0 0 1 0 10" fill="none" stroke="#2B211C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M300 256 c-4 -6 4 -10 0 -16 M330 256 c-4 -6 4 -10 0 -16 M360 274 c-4 -6 4 -10 0 -16" fill="none" stroke="#2B211C" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
+</g>
+</svg>

@@ -1,0 +1,4 @@
+playground/.*.php
+dist/
+__pycache__/
+*.zip

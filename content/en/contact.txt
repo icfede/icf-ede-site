@@ -1,0 +1,22 @@
+title: Contact
+slug: en-contact
+order: 4
+key: contact
+---
+Would you like more information, or to get to know us first? Feel free to send us an email.
+
+**Email:** [contact@icfede.nl](mailto:contact@icfede.nl)
+
+**Meetings:** Paasberg School (Paasbergschool), Kleefsehoek 1A, 6711 SP Ede, the Netherlands ([directions](https://maps.google.com/?q=Kleefsehoek+1A+Ede))
+
+## Organisation
+
+ICF Ede is run by the foundation Stichting ICF Ede, established on 17 July 2018. The foundation is registered with the Netherlands Chamber of Commerce (KvK) under number 72164654, RSIN 859011677.
+
+## Annual reports
+
+Read our annual reports (in Dutch) for more information about our activities and finances.
+
+- [Annual report 2025](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2025.pdf)
+- [Annual report 2024](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2024.pdf)
+- [Annual report 2023](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2023.pdf)

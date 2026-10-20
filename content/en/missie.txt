@@ -1,0 +1,76 @@
+title: Mission and vision
+slug: mission
+order: 3
+key: missie
+---
+@beeld visie
+
+## Vision
+
+ICF Ede’s vision is to be a vibrant, intercultural Christian community that reflects God’s love, where people of all cultures and backgrounds come to know God, embrace their identity in Christ, grow spiritually and experience joy in Christ.
+
+@beeld missie
+
+## Mission
+
+ICF Ede is committed to building a welcoming and caring Christian community, where people of all cultures and backgrounds can meet Christ, embrace their identity in Him and grow in faith. Through intentional discipleship, genuine fellowship and loving service, we seek to reflect God’s love, promote unity and share the gospel in Ede and beyond.
+
+@beeld waarden
+
+## Core values
+
+These values guide us at ICF Ede as we pursue our vision of being a vibrant, intercultural Christian community that reflects God’s love.
+
+@icoon evangelie
+
+### Gospel-centred living
+
+We are committed to proclaiming and living out the gospel, knowing that salvation is a gift of grace through faith in Jesus Christ (Acts 4:12, John 3:16). Everything we do is rooted in Christ’s redeeming work, and we long to share this hope with the world.
+
+@icoon bijbel
+
+### Biblical truth and discipleship
+
+God’s Word is our ultimate authority and guide for life (2 Timothy 3:16-17). We value faithful teaching, diligent study and practical application of Scripture to strengthen our faith. Through discipleship we nurture spiritual growth and equip believers to follow Jesus.
+
+@icoon groei
+
+### Spiritual growth and service
+
+We want to be fertile soil where faith can flourish (Matthew 13:23). Through mentoring, ministry and encouragement we inspire one another to serve God and others with our talents, gifts and resources.
+
+@icoon liefde
+
+### Christian love and humility
+
+We follow Jesus’ example of selfless service, valuing others above ourselves (Mark 10:45, Philippians 2:3-4). Leadership in our community is a privilege, modelled in humility and sacrificial love.
+
+@icoon heiligheid
+
+### A call to holiness
+
+We strive for a holy life that reflects God’s character (1 Peter 1:15-16). By pursuing righteousness and turning away from sin, we shine as a witness to the world (Matthew 5:16).
+
+@icoon familie
+
+### A welcoming family of God
+
+We are a spiritual home for people of all backgrounds, united in Christ (Galatians 3:28). Our church is a place of love, hospitality and belonging for all God’s children.
+
+@icoon veilig
+
+### A safe place to meet God
+
+We create an atmosphere where people can experience God’s presence without fear or judgement (Matthew 11:28). Our community is built on trust, compassion and grace, and supports everyone’s life of faith.
+
+@icoon zending
+
+### Passion for mission and evangelism
+
+We are called to share the gospel and make disciples, both locally and worldwide (Matthew 28:19-20). With love and urgency we reach out to the lost, reflecting God’s heart (Luke 19:10).
+
+@icoon vrijgevig
+
+### A generous and supported community
+
+We trust in God’s provision through faithful stewardship and joyful giving (Acts 2:44-45, 2 Corinthians 9:7). Our church flourishes through the generosity of individuals, churches and organisations who share in our mission.

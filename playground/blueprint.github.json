@@ -1,0 +1,81 @@
+{
+ "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+ "meta": {
+  "title": "ICF Ede – preview vanaf GitHub",
+  "author": "ICF Ede"
+ },
+ "landingPage": "/",
+ "preferredVersions": {
+  "php": "8.3",
+  "wp": "latest"
+ },
+ "features": {
+  "networking": true
+ },
+ "login": true,
+ "steps": [
+  {
+   "step": "setSiteOptions",
+   "options": {
+    "blogname": "ICF Ede",
+    "blogdescription": "Interculturele Christelijke Familie Ede",
+    "timezone_string": "Europe/Amsterdam",
+    "date_format": "j F Y",
+    "time_format": "H:i",
+    "permalink_structure": "/%postname%/"
+   }
+  },
+  {
+   "step": "installPlugin",
+   "pluginData": {
+    "resource": "wordpress.org/plugins",
+    "slug": "polylang"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "mkdir",
+   "path": "/wordpress/wp-content/themes/icf-ede"
+  },
+  {
+   "step": "writeFiles",
+   "writeToPath": "/wordpress/wp-content/themes/icf-ede",
+   "filesTree": {
+    "resource": "git:directory",
+    "url": "https://github.com/icfede/icf-ede-site",
+    "ref": "main",
+    "refType": "branch",
+    "path": "wp-content/themes/icf-ede"
+   }
+  },
+  {
+   "step": "activateTheme",
+   "themeFolderName": "icf-ede"
+  },
+  {
+   "step": "mkdir",
+   "path": "/wordpress/wp-content/plugins/icf-ede-bijeenkomsten"
+  },
+  {
+   "step": "writeFiles",
+   "writeToPath": "/wordpress/wp-content/plugins/icf-ede-bijeenkomsten",
+   "filesTree": {
+    "resource": "git:directory",
+    "url": "https://github.com/icfede/icf-ede-site",
+    "ref": "main",
+    "refType": "branch",
+    "path": "wp-content/plugins/icf-ede-bijeenkomsten"
+   }
+  },
+  {
+   "step": "activatePlugin",
+   "pluginPath": "icf-ede-bijeenkomsten/icf-ede-bijeenkomsten.php"
+  },
+  {
+   "step": "runPHP",
+   "code": "<?php\ndefine( 'WP_ADMIN', true );\nrequire '/wordpress/wp-load.php';\nwp_set_current_user( 1 );\ntry {\n\t$log = icf_installeer( array( 'rooster' => true ) );\n} catch ( Throwable $e ) {\n\t$log = array( 'fout: ' . $e->getMessage() );\n}\nupdate_option( 'icf_setup_log', $log );\necho implode( \"\\n\", $log );\n"
+  }
+ ]
+}
