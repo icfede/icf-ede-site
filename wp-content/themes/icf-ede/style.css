@@ -6,7 +6,7 @@ Description: Warm, eigentijds blokthema voor de Interculturele Christelijke Fami
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Version: 1.4.1
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: icf-ede
@@ -64,9 +64,9 @@ body { -webkit-font-smoothing: antialiased; }
 
 /* ---------- Logo ---------- */
 .icf-logo { display: inline-flex; line-height: 0; }
-.icf-logo img { height: 52px; width: auto; }
-.icf-logo-wit img { height: 120px; }
-@media (max-width: 600px) { .icf-logo img { height: 42px; } }
+.icf-logo img { height: 56px; width: auto; }
+.icf-logo-wit img { height: 96px; }
+@media (max-width: 600px) { .icf-logo img { height: 46px; } }
 
 /* ---------- Hero (fotobanner) ---------- */
 .icf-hero .wp-block-cover__image-background { animation: icf-zoom 18s ease-out both; }

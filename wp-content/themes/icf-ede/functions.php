@@ -64,8 +64,8 @@ add_shortcode(
 			esc_url( $thuis ),
 			esc_url( $src ),
 			esc_attr( get_bloginfo( 'name' ) ),
-			$wit ? 559 : 941,
-			$wit ? 600 : 300
+			587,
+			300
 		);
 	}
 );
@@ -77,8 +77,10 @@ add_action(
 		if ( has_site_icon() ) {
 			return;
 		}
-		$icoon = esc_url( get_template_directory_uri() . '/assets/logo/icoon.png' );
-		echo '<link rel="icon" href="' . $icoon . '" sizes="512x512">' . "\n";
+		$map   = get_template_directory_uri() . '/assets/logo/';
+		$icoon = esc_url( $map . 'icoon.png' );
+		echo '<link rel="icon" href="' . esc_url( $map . 'favicon-32.png' ) . '" sizes="32x32" type="image/png">' . "\n";
+		echo '<link rel="icon" href="' . $icoon . '" sizes="512x512" type="image/png">' . "\n";
 		echo '<link rel="apple-touch-icon" href="' . $icoon . '">' . "\n";
 	}
 );
