@@ -27,10 +27,22 @@ def tree(path):
             continue
         if os.path.isdir(full):
             out[name] = tree(full)
+        elif name.endswith(BINAIR):
+            # Blueprint-bestanden zijn tekst: plaatjes gaan als base64 mee en worden in WordPress teruggezet.
+            with open(full, "rb") as f:
+                out[name + ".b64"] = base64.b64encode(f.read()).decode()
         else:
             with open(full, encoding="utf-8") as f:
                 out[name] = f.read()
     return out
+
+
+BINAIR = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".ico")
+B64_TERUGZETTEN = (
+    "<?php foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator('/wordpress/wp-content/themes/icf-ede',"
+    " FilesystemIterator::SKIP_DOTS)) as $f) { if (substr($f, -4) === '.b64') {"
+    " file_put_contents(substr($f, 0, -4), base64_decode(file_get_contents($f))); unlink($f); } }"
+)
 
 
 PHP_STUBS = (
@@ -209,6 +221,7 @@ echo implode( "\\n", $log );
             {"step": "mkdir", "path": "/wordpress/wp-content/themes/icf-ede"},
             {"step": "writeFiles", "writeToPath": "/wordpress/wp-content/themes/icf-ede",
              "filesTree": {"resource": "literal:directory", "name": "icf-ede", "files": tree(THEME)}},
+            {"step": "runPHP", "code": B64_TERUGZETTEN},
             {"step": "activateTheme", "themeFolderName": "icf-ede"},
             {"step": "mkdir", "path": "/wordpress/wp-content/plugins/icf-ede-bijeenkomsten"},
             {"step": "writeFiles", "writeToPath": "/wordpress/wp-content/plugins/icf-ede-bijeenkomsten",
