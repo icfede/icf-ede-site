@@ -1,8 +1,9 @@
 import math, os
 # Tekent de illustraties (visie, missie, kernwaarden) in de kleuren van het logo. Draai: python3 playground/teken-illustraties.py
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "wp-content", "themes", "icf-ede", "assets", "illustraties")
-ROOM, ZAND, TERRA, HON, OLIJF, KOF = "#FAF6F1", "#EFE6DC", "#8E5A9B", "#E7AE3F", "#34493A", "#1F2A3C"
-HONL, TERRAL, OLIJFL, OLIJFLL = "#F5D48A", "#C9A3D3", "#5E7A63", "#83A07A"
+ROOM, ZAND, TERRA, HON, OLIJF, KOF = "#FFF9F1", "#FFF0DD", "#6A8F65", "#E7AE3F", "#395A45", "#23362A"
+PAARS, LILA = "#8E5A9B", "#D7BEDF"  # paarse accenten, spaarzaam gebruikt
+HONL, TERRAL, OLIJFL, OLIJFLL = "#F5D48A", "#A9C29F", "#6A8F65", "#8FB089"
 S = 'stroke="%s" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"' % KOF
 
 def svg(vb, body, title):
@@ -37,7 +38,7 @@ visie = f'''<defs><clipPath id="c"><circle cx="240" cy="180" r="170"/></clipPath
 <rect x="109" y="262" width="12" height="12" rx="2" fill="{ROOM}" {S}/>
 <!-- kerkje in het midden -->
 <path d="M212 286 V206 H268 V286 Z" fill="{ROOM}" {S}/>
-<path d="M204 208 L240 172 L276 208 Z" fill="{TERRA}" {S}/>
+<path d="M204 208 L240 172 L276 208 Z" fill="{PAARS}" {S}/>
 <path d="M240 146 V172 M231 156 H249" fill="none" stroke="{KOF}" stroke-width="4" stroke-linecap="round"/>
 <circle cx="240" cy="226" r="8" fill="{HON}" {S}/>
 <path d="M229 286 V262 a11 11 0 0 1 22 0 V286 Z" fill="{HON}" {S}/>
@@ -80,10 +81,10 @@ missie = f'''<defs><clipPath id="c"><circle cx="240" cy="180" r="170"/></clipPat
 <rect x="196" y="300" width="186" height="12" rx="6" fill="{KOF}"/>
 <path d="M212 312 V352 M366 312 V352" stroke="{KOF}" stroke-width="6" stroke-linecap="round"/>
 <!-- theepot -->
-<path d="M214 300 C208 274 222 262 238 262 C254 262 268 274 262 300 Z" fill="{TERRA}" {S}/>
+<path d="M214 300 C208 274 222 262 238 262 C254 262 268 274 262 300 Z" fill="{PAARS}" {S}/>
 <path d="M262 280 C274 276 278 266 284 262" fill="none" {S}/>
 <path d="M214 278 C202 276 202 290 214 292" fill="none" {S}/>
-<path d="M230 262 a8 6 0 0 1 16 0" fill="{TERRAL}" {S}/>
+<path d="M230 262 a8 6 0 0 1 16 0" fill="{LILA}" {S}/>
 <!-- theeglaasjes -->
 <path d="M292 296 c-5 -6 -3 -12 0 -15 c-3 -3 -3 -9 1 -12 h12 c4 3 4 9 1 12 c3 3 5 9 0 15 Z" fill="#F7EBD6" {S}/><path d="M292 293 c-2 -4 -1 -8 1 -10 h12 c2 2 3 6 1 10 Z" fill="{TERRA}"/><ellipse cx="299" cy="298" rx="13" ry="3" fill="{ROOM}" {S}/><path d="M322 296 c-5 -6 -3 -12 0 -15 c-3 -3 -3 -9 1 -12 h12 c4 3 4 9 1 12 c3 3 5 9 0 15 Z" fill="#F7EBD6" {S}/><path d="M322 293 c-2 -4 -1 -8 1 -10 h12 c2 2 3 6 1 10 Z" fill="{TERRA}"/><ellipse cx="329" cy="298" rx="13" ry="3" fill="{ROOM}" {S}/>
 <!-- koffiekop -->
@@ -93,7 +94,7 @@ missie = f'''<defs><clipPath id="c"><circle cx="240" cy="180" r="170"/></clipPat
 </g>'''
 
 # ---------- WAARDEN: boom met wortels en negen vruchten ----------
-fruit = [(176,140,TERRA),(214,108,HON),(262,104,TERRA),(306,134,HON),(196,184,HON),(244,152,TERRA),(292,180,TERRA),(230,206,HON),(330,178,HON)]
+fruit = [(176,140,PAARS),(214,108,HON),(262,104,PAARS),(306,134,HON),(196,184,HON),(244,152,PAARS),(292,180,HON),(230,206,HON),(330,178,PAARS)]
 waarden = f'''<defs><clipPath id="c"><circle cx="240" cy="180" r="170"/></clipPath></defs>
 <circle cx="240" cy="180" r="170" fill="{ZAND}"/>
 <g clip-path="url(#c)">
@@ -123,7 +124,7 @@ iconen = {
  "evangelie": icoon(rays(48, 44, 22, 32, -180, 0, 30, HON, 4) + f'<path d="M44 22 h8 v14 h12 v8 h-12 v28 h-8 v-28 h-12 v-8 h12 Z" fill="{TERRA}" {S2}/>'),
  "bijbel": icoon(f'<path d="M48 34 C40 28 28 27 20 29 V68 C28 66 40 67 48 73 Z" fill="{ROOM}" {S2}/><path d="M48 34 C56 28 68 27 76 29 V68 C68 66 56 67 48 73 Z" fill="{ROOM}" {S2}/><path d="M26 38 C32 37 38 38 42 40 M26 46 C32 45 38 46 42 48 M54 40 C58 38 64 37 70 38 M54 48 C58 46 64 45 70 46" fill="none" stroke="{TERRA}" stroke-width="2.5" stroke-linecap="round"/><path d="M58 29 V44 l4 -3 l4 3 V28" fill="{TERRA}" {S2}/>'),
  "groei": icoon(f'<path d="M22 70 C36 62 60 62 74 70 Z" fill="#C99A6B" {S2}/><path d="M48 66 V42" {S2}/><path d="M48 50 C48 36 36 30 24 32 C24 44 34 52 48 50 Z" fill="{OLIJFL}" {S2}/><path d="M48 44 C48 28 60 20 74 22 C74 36 62 46 48 44 Z" fill="{OLIJF}" {S2}/>'),
- "liefde": icoon(f'<path d="M48 70 C30 58 20 48 20 37 C20 28 27 22 35 22 C41 22 46 26 48 31 C50 26 55 22 61 22 C69 22 76 28 76 37 C76 48 66 58 48 70 Z" fill="{TERRA}" {S2}/><path d="M32 34 C33 30 36 28 39 28" fill="none" stroke="{TERRAL}" stroke-width="3" stroke-linecap="round"/>'),
+ "liefde": icoon(f'<path d="M48 70 C30 58 20 48 20 37 C20 28 27 22 35 22 C41 22 46 26 48 31 C50 26 55 22 61 22 C69 22 76 28 76 37 C76 48 66 58 48 70 Z" fill="{PAARS}" {S2}/><path d="M32 34 C33 30 36 28 39 28" fill="none" stroke="{LILA}" stroke-width="3" stroke-linecap="round"/>'),
  "heiligheid": icoon(f'<path d="M48 18 C54 26 58 32 58 38 C58 44 53 48 48 48 C43 48 38 44 38 38 C38 32 42 26 48 18 Z" fill="{HON}" {S2}/><path d="M48 32 C50 35 52 37 52 40 C52 43 50 44 48 44 C46 44 44 43 44 40 C44 37 46 35 48 32 Z" fill="{ROOM}"/><path d="M20 56 C26 52 34 50 44 52 H62 C70 52 76 50 80 46 C80 58 72 68 58 70 H38 C28 70 22 64 20 56 Z" fill="{TERRA}" {S2}/><path d="M38 70 l-4 6 h28 l-4 -6" fill="{TERRAL}" {S2}/>'),
  "familie": icoon(f'<path d="M20 46 L48 22 L76 46" fill="none" {S2}/><path d="M26 42 V74 H70 V42 L48 24 Z" fill="{HONL}" {S2}/><path d="M48 66 C40 60 36 56 36 51 C36 47 39 45 42 45 C45 45 47 47 48 49 C49 47 51 45 54 45 C57 45 60 47 60 51 C60 56 56 60 48 66 Z" fill="{TERRA}" {S2}/>'),
  "veilig": icoon(f'<path d="M22 50 C30 42 40 40 50 44 C56 34 66 28 76 30 C70 34 66 40 64 46 C70 50 74 56 74 62 C64 64 52 62 44 58 L30 66 L34 56 C28 56 24 54 22 50 Z" fill="{ROOM}" {S2}/><path d="M50 44 C46 52 48 58 56 60" fill="none" {S2}/><circle cx="68" cy="36" r="2" fill="{KOF}"/><path d="M76 30 L82 31 L76 34" fill="{HON}" {S2}/><path d="M62 64 C60 70 56 72 52 72 M66 62 C68 68 72 70 76 70" fill="none" stroke="{OLIJF}" stroke-width="3" stroke-linecap="round"/><ellipse cx="54" cy="72" rx="4" ry="2.5" fill="{OLIJFL}"/>'),

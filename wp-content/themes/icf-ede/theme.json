@@ -11,12 +11,17 @@
 				{
 					"slug": "room",
 					"name": "Room",
-					"color": "#FAF6F1"
+					"color": "#FFF9F1"
 				},
 				{
-					"slug": "zand",
-					"name": "Zand",
-					"color": "#EFE6DC"
+					"slug": "creme",
+					"name": "Crème (logo)",
+					"color": "#FFF0DD"
+				},
+				{
+					"slug": "salie",
+					"name": "Salie",
+					"color": "#E3EBDD"
 				},
 				{
 					"slug": "wit",
@@ -24,29 +29,29 @@
 					"color": "#FFFFFF"
 				},
 				{
+					"slug": "groen",
+					"name": "Groen (logo)",
+					"color": "#395A45"
+				},
+				{
+					"slug": "groen-donker",
+					"name": "Groen donker",
+					"color": "#23362A"
+				},
+				{
+					"slug": "groen-licht",
+					"name": "Groen licht (logo)",
+					"color": "#6A8F65"
+				},
+				{
 					"slug": "paars",
-					"name": "Paars (logo)",
+					"name": "Paars (accent)",
 					"color": "#8E5A9B"
 				},
 				{
-					"slug": "paars-donker",
-					"name": "Paars donker",
-					"color": "#6E4279"
-				},
-				{
 					"slug": "lila",
-					"name": "Lila",
-					"color": "#C9A3D3"
-				},
-				{
-					"slug": "honing",
-					"name": "Honing",
-					"color": "#E7AE3F"
-				},
-				{
-					"slug": "nachtblauw",
-					"name": "Nachtblauw (logo)",
-					"color": "#1F2A3C"
+					"name": "Lila (accent op donker)",
+					"color": "#D7BEDF"
 				}
 			]
 		},
@@ -154,7 +159,7 @@
 	"styles": {
 		"color": {
 			"background": "var(--wp--preset--color--room)",
-			"text": "var(--wp--preset--color--nachtblauw)"
+			"text": "var(--wp--preset--color--groen-donker)"
 		},
 		"spacing": {
 			"padding": {
@@ -171,7 +176,7 @@
 		"elements": {
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--paars)"
+					"text": "var(--wp--preset--color--groen)"
 				}
 			},
 			"heading": {
@@ -182,7 +187,7 @@
 					"letterSpacing": "-0.02em"
 				},
 				"color": {
-					"text": "var(--wp--preset--color--nachtblauw)"
+					"text": "var(--wp--preset--color--groen)"
 				}
 			},
 			"h1": {
@@ -202,7 +207,7 @@
 			},
 			"button": {
 				"color": {
-					"background": "var(--wp--preset--color--paars)",
+					"background": "var(--wp--preset--color--groen)",
 					"text": "var(--wp--preset--color--wit)"
 				},
 				"border": {
@@ -221,7 +226,7 @@
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--nachtblauw)"
+						"background": "var(--wp--preset--color--groen-donker)"
 					}
 				}
 			}
@@ -241,7 +246,7 @@
 				"elements": {
 					"link": {
 						"color": {
-							"text": "var(--wp--preset--color--nachtblauw)"
+							"text": "var(--wp--preset--color--groen-donker)"
 						},
 						"typography": {
 							"textDecoration": "none"
@@ -252,7 +257,7 @@
 			"core/quote": {
 				"border": {
 					"left": {
-						"color": "var(--wp--preset--color--honing)",
+						"color": "var(--wp--preset--color--lila)",
 						"width": "4px"
 					}
 				},
