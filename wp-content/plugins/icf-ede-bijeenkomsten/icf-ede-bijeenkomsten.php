@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ICF Ede – Bijeenkomsten
  * Description: Rooster van bijeenkomsten (verleden datums verdwijnen vanzelf), reeksen in één keer toevoegen, en vertaalbare teksten voor header en footer. Werkt met Polylang.
- * Version: 1.3.0
+ * Version: 1.4.0
  * Requires at least: 6.6
  * Requires PHP: 7.4
  * Author: ICF Ede

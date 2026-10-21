@@ -74,6 +74,8 @@ def inline(text):
 RASTER_OPEN = ('<!-- wp:group {"align":"wide","className":"icf-waarden","layout":{"type":"grid","minimumColumnWidth":"17rem"}} -->\n'
                '<div class="wp-block-group alignwide icf-waarden">')
 RASTER_DICHT = '</div>\n<!-- /wp:group -->'
+TEGELS_OPEN = ('<!-- wp:group {"align":"wide","className":"icf-tegels","layout":{"type":"grid","columnCount":2,"minimumColumnWidth":"19rem"}} -->\n'
+               '<div class="wp-block-group alignwide icf-tegels">')
 
 
 def beeld_blok(naam, klasse):
@@ -92,13 +94,14 @@ def to_blocks(body, lang="nl"):
         if not line:
             i += 1
             continue
-        if line.startswith("@beeld ") or line.startswith("@icoon "):
+        if line.startswith(("@beeld ", "@icoon ", "@tegel ")):
             # Een sectie (of kaart) met illustratie: alles tot de volgende @-regel of kop.
             soort, naam = line.split()[:2]
             j, kop_gezien = i + 1, False
-            while j < len(lines) and not lines[j].startswith("@"):
+            # Een @pattern-regel mag binnen een tegel staan; andere @-regels sluiten hem af.
+            while j < len(lines) and not (lines[j].startswith("@") and not (soort == "@tegel" and lines[j].startswith("@pattern "))):
                 if lines[j].startswith("#"):
-                    if kop_gezien and (soort == "@icoon" or lines[j].startswith("## ")):
+                    if kop_gezien and (soort in ("@icoon", "@tegel") or lines[j].startswith("## ")):
                         break
                     kop_gezien = True
                 j += 1
@@ -111,12 +114,14 @@ def to_blocks(body, lang="nl"):
                     '<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:34%">' + img + '</div>\n<!-- /wp:column -->\n\n'
                     '<!-- wp:column {"verticalAlignment":"center"} -->\n<div class="wp-block-column is-vertically-aligned-center">' + binnen + '</div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->')
             else:
-                kaart = ('<!-- wp:group {"className":"icf-waarde","layout":{"type":"default"}} -->\n<div class="wp-block-group icf-waarde">'
+                klasse = "icf-waarde icf-tegel" if soort == "@tegel" else "icf-waarde"
+                open_ = TEGELS_OPEN if soort == "@tegel" else RASTER_OPEN
+                kaart = ('<!-- wp:group {"className":"%s","layout":{"type":"default"}} -->\n<div class="wp-block-group %s">' % (klasse, klasse)
                          + img + "\n\n" + binnen + '</div>\n<!-- /wp:group -->')
-                if blocks and blocks[-1].startswith(RASTER_OPEN):
+                if blocks and blocks[-1].startswith(open_):
                     blocks[-1] = blocks[-1][: -len(RASTER_DICHT)] + "\n\n" + kaart + RASTER_DICHT
                 else:
-                    blocks.append(RASTER_OPEN + kaart + RASTER_DICHT)
+                    blocks.append(open_ + kaart + RASTER_DICHT)
             i = j
             continue
         if line.startswith("@pattern "):

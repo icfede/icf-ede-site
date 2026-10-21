@@ -6,7 +6,7 @@ Description: Warm, eigentijds blokthema voor de Interculturele Christelijke Fami
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Version: 1.7.2
+Version: 1.8.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: icf-ede
@@ -224,3 +224,13 @@ body { -webkit-font-smoothing: antialiased; }
 	.icf-hero .wp-block-cover__image-background { animation: none; }
 	.icf-foto img, .icf-rooster li { transition: none; }
 }
+
+/* ---------- Tegels (Meedoen: Komen, Bidden, Doen, Geven) ---------- */
+.icf-tegels { gap: var(--wp--preset--spacing--40) !important; margin-top: var(--wp--preset--spacing--50) !important; }
+.icf-tegel { display: flex; flex-direction: column; }
+.icf-tegel h2 { font-size: var(--wp--preset--font-size--groot); margin-top: .9rem; }
+.icf-tegel ul { padding-inline-start: 1.1em; margin-top: .4rem; }
+.icf-tegel li + li { margin-top: .25rem; }
+.icf-tegel > *:last-child { margin-bottom: 0; }
+.icf-geven-kort { gap: 1rem !important; margin-top: auto; padding-top: .5rem; }
+.icf-geven-kort .icf-qr { display: block; width: 112px; height: 112px; border-radius: 10px; background: #fff; }

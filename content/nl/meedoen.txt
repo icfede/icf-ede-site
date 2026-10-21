@@ -5,9 +5,13 @@ key: meedoen
 ---
 Wil je betrokken raken bij de missie van ICF Ede? Heel fijn! We zijn een groeiende gemeenschap en kunnen steun goed gebruiken. Je kunt ons op allerlei manieren ondersteunen.
 
+@tegel familie
+
 ## Komen
 
 Kom naar onze bijeenkomsten! Dan kunnen we elkaar leren kennen en kun je de sfeer proeven. Letterlijk, want na de dienst eten we met elkaar. [Bekijk de komende bijeenkomsten](#icf:home#bijeenkomsten).
+
+@tegel veilig
 
 ## Bidden
 
@@ -17,6 +21,8 @@ Kom naar onze bijeenkomsten! Dan kunnen we elkaar leren kennen en kun je de sfee
 - Voor verwelkoming en herstel voor onze ontheemde broers en zussen
 - Voor verbondenheid en wijsheid in het omgaan met alle verschillen bij ICF Ede
 - Voor samenwerking en eenheid tussen kerken in Ede
+
+@tegel liefde
 
 ## Doen
 
@@ -30,8 +36,10 @@ Meedoen kan ook door praktisch te helpen. We kunnen bijvoorbeeld hulp gebruiken 
 
 Lijkt je iets hiervan leuk? Mail naar [contact@icfede.nl](mailto:contact@icfede.nl).
 
+@tegel vrijgevig
+
 ## Geven
 
 Je kunt ons ook financieel ondersteunen. Je gift gebruiken we om onze ruimte te huren, voor de aanschaf van Bijbels en lectuur in diverse talen en voor materialen voor het kinderwerk.
 
-@pattern geven
+@pattern geven-kort

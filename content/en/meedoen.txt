@@ -5,9 +5,13 @@ key: meedoen
 ---
 Would you like to be part of the mission of ICF Ede? Wonderful! We are a growing community and are grateful for every kind of support. There are many ways to get involved.
 
+@tegel familie
+
 ## Come
 
 Come to our meetings! That way we can get to know each other and you can get a taste of the atmosphere. Literally, because after the service we eat together. [See the upcoming meetings](#icf:home#bijeenkomsten).
+
+@tegel veilig
 
 ## Pray
 
@@ -17,6 +21,8 @@ Come to our meetings! That way we can get to know each other and you can get a t
 - For welcome and healing for our displaced brothers and sisters
 - For unity and wisdom in dealing with all our differences at ICF Ede
 - For cooperation and unity between the churches in Ede
+
+@tegel liefde
 
 ## Serve
 
@@ -30,8 +36,10 @@ You can also help in practical ways. For example, we could use help with:
 
 Does any of this appeal to you? Send an email to [contact@icfede.nl](mailto:contact@icfede.nl).
 
+@tegel vrijgevig
+
 ## Give
 
 You can also support us financially. We use your gift to rent our venue, to buy Bibles and literature in many languages, and for materials for the children’s ministry.
 
-@pattern geven
+@pattern geven-kort

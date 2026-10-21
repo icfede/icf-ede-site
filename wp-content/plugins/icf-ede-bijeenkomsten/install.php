@@ -44,7 +44,7 @@ function icf_install_controle() {
 function icf_installeer( $opties = array() ) {
 	require_once ABSPATH . 'wp-admin/includes/file.php';
 	require_once ABSPATH . 'wp-admin/includes/translation-install.php';
-	$opties = wp_parse_args( $opties, array( 'rooster' => false, 'home_opnieuw' => false ) );
+	$opties = wp_parse_args( $opties, array( 'rooster' => false, 'opnieuw' => false ) );
 	$log    = array();
 
 	$fouten = icf_install_controle();
@@ -121,19 +121,22 @@ function icf_installeer( $opties = array() ) {
 			continue;
 		}
 		$bestaand = get_page_by_path( $p['slug'] );
-		/* Homepagina's opnieuw opbouwen uit de patronen (alleen als daarvoor gekozen is) */
-		if ( $bestaand && $opties['home_opnieuw'] && ! empty( $p['patterns'] ) ) {
-			$GLOBALS['icf_lang'] = $p['lang'];
-			ob_start();
-			foreach ( $p['patterns'] as $pat ) {
-				$bestand = get_template_directory() . '/patterns/' . $pat . '.php';
-				if ( file_exists( $bestand ) ) {
-					include $bestand;
-					echo "\n\n";
+		/* Pagina's opnieuw opbouwen vanuit de zip (alleen als daarvoor gekozen is) */
+		if ( $bestaand && $opties['opnieuw'] ) {
+			if ( ! empty( $p['patterns'] ) ) {
+				$GLOBALS['icf_lang'] = $p['lang'];
+				ob_start();
+				foreach ( $p['patterns'] as $pat ) {
+					$bestand = get_template_directory() . '/patterns/' . $pat . '.php';
+					if ( file_exists( $bestand ) ) {
+						include $bestand;
+						echo "\n\n";
+					}
 				}
+				$p['content'] = ob_get_clean();
+				unset( $GLOBALS['icf_lang'] );
 			}
-			$nieuw_inhoud = str_replace( '{{thema}}', get_template_directory_uri(), ob_get_clean() );
-			unset( $GLOBALS['icf_lang'] );
+			$nieuw_inhoud = str_replace( '{{thema}}', get_template_directory_uri(), $p['content'] );
 			wp_update_post( array( 'ID' => $bestaand->ID, 'post_content' => wp_slash( $nieuw_inhoud ) ) );
 			if ( pll_get_post_language( $bestaand->ID ) !== $p['lang'] ) {
 				pll_set_post_language( $bestaand->ID, $p['lang'] );
@@ -257,7 +260,7 @@ function icf_install_pagina() {
 		$log = icf_installeer(
 			array(
 				'rooster'      => ! empty( $_POST['rooster'] ),
-				'home_opnieuw' => ! empty( $_POST['home_opnieuw'] ),
+				'opnieuw'      => ! empty( $_POST['opnieuw'] ),
 			)
 		);
 	}
@@ -289,7 +292,7 @@ function icf_install_pagina() {
 			<form method="post">
 				<?php wp_nonce_field( 'icf_install', 'icf_install_nonce' ); ?>
 				<p><label><input type="checkbox" name="rooster" value="1" checked> Voorbeeldrooster toevoegen (de datums van de huidige site)</label></p>
-				<p><label><input type="checkbox" name="home_opnieuw" value="1"> Homepagina's opnieuw opbouwen met de nieuwste versie van het thema (overschrijft wijzigingen aan de homepagina's in alle talen; een vorige versie blijft terug te halen via Revisies)</label></p>
+				<p><label><input type="checkbox" name="opnieuw" value="1"> Alle ICF-pagina's opnieuw opbouwen vanuit de nieuwste versie (Home, Meedoen, Missie en Contact in alle talen). Let op: dit overschrijft wijzigingen aan die pagina's; een vorige versie blijft terug te halen via Revisies.</label></p>
 				<?php submit_button( 'Installeren', 'primary large' ); ?>
 			</form>
 		<?php endif; ?>
