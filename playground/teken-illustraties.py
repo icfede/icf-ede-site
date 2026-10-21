@@ -132,9 +132,9 @@ iconen = {
  "vrijgevig": icoon(f'<path d="M30 42 C30 34 38 30 44 34 C46 26 56 26 58 34 C64 30 72 34 70 42 Z" fill="{HON}" {S2}/><path d="M40 36 l2 4 M52 32 l1 4 M62 36 l-1 4" stroke="{TERRA}" stroke-width="2.5" stroke-linecap="round"/><path d="M20 44 H76 L70 70 C69 74 66 76 62 76 H34 C30 76 27 74 26 70 Z" fill="{TERRAL}" {S2}/><path d="M24 54 H72 M27 64 H69" fill="none" stroke="{TERRA}" stroke-width="2.5" stroke-linecap="round"/>'),
 }
 
-files = {"visie.svg": svg("0 0 480 360", visie, "Illustratie visie"),
-         "missie.svg": svg("0 0 480 360", missie, "Illustratie missie"),
-         "waarden.svg": svg("0 0 480 360", waarden, "Illustratie kernwaarden")}
+# visie.svg, missie.svg en waarden.svg zijn nu eigen iconen van ICF (aangeleverd beeld);
+# dit script tekent alleen nog de negen kleine iconen bij de kernwaarden.
+files = {}
 for k, v in iconen.items():
     files["waarde-%s.svg" % k] = svg("0 0 96 96", v, k)
 for n, c in files.items():
