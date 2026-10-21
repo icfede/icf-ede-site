@@ -119,20 +119,20 @@
 				{
 					"slug": "klein",
 					"name": "Klein",
-					"size": "0.9rem"
+					"size": "1rem"
 				},
 				{
 					"slug": "normaal",
 					"name": "Normaal",
-					"size": "1.0625rem"
+					"size": "1.125rem"
 				},
 				{
 					"slug": "groot",
 					"name": "Groot",
-					"size": "1.3rem",
+					"size": "1.4rem",
 					"fluid": {
-						"min": "1.15rem",
-						"max": "1.3rem"
+						"min": "1.25rem",
+						"max": "1.4rem"
 					}
 				},
 				{
