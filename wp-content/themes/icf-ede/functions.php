@@ -57,7 +57,7 @@ add_shortcode(
 		$atts  = shortcode_atts( array( 'variant' => '' ), $atts );
 		$wit   = 'wit' === $atts['variant'];
 		$thuis = function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' );
-		$src   = get_template_directory_uri() . '/assets/logo/' . ( $wit ? 'logo-wit.png' : 'logo-horizontaal.png' );
+		$src   = get_template_directory_uri() . '/assets/logo/' . ( $wit ? 'logo-wit.png' : 'logo-horizontaal.png' ) . '?v=' . rawurlencode( wp_get_theme( 'icf-ede' )->get( 'Version' ) );
 		return sprintf(
 			'<a class="icf-logo%s" href="%s" rel="home"><img src="%s" alt="%s" width="%d" height="%d" decoding="async"></a>',
 			$wit ? ' icf-logo-wit' : '',
@@ -78,9 +78,25 @@ add_action(
 			return;
 		}
 		$map   = get_template_directory_uri() . '/assets/logo/';
-		$icoon = esc_url( $map . 'icoon.png' );
-		echo '<link rel="icon" href="' . esc_url( $map . 'favicon-32.png' ) . '" sizes="32x32" type="image/png">' . "\n";
+		$v     = '?v=' . rawurlencode( wp_get_theme( 'icf-ede' )->get( 'Version' ) );
+		$icoon = esc_url( $map . 'icoon.png' . $v );
+		echo '<link rel="icon" href="' . esc_url( $map . 'favicon-32.png' . $v ) . '" sizes="32x32" type="image/png">' . "\n";
 		echo '<link rel="icon" href="' . $icoon . '" sizes="512x512" type="image/png">' . "\n";
 		echo '<link rel="apple-touch-icon" href="' . $icoon . '">' . "\n";
 	}
 );
+
+/*
+ * Plaatjes uit het thema (logo, illustraties) krijgen het versienummer van het thema achter
+ * hun adres. Zo zien bezoekers na een thema-update meteen de nieuwe versie, in plaats van
+ * een week lang de oude uit het geheugen van hun browser.
+ */
+function icf_thema_versie_url( $html ) {
+	if ( false === strpos( $html, '/themes/icf-ede/assets/' ) ) {
+		return $html;
+	}
+	$versie = wp_get_theme( 'icf-ede' )->get( 'Version' );
+	return preg_replace( '#(/themes/icf-ede/assets/[^"\'?\s]+\.(?:svg|png))(["\'])#', '$1?v=' . rawurlencode( $versie ) . '$2', $html );
+}
+add_filter( 'render_block', 'icf_thema_versie_url', 20 );
+add_filter( 'the_content', 'icf_thema_versie_url', 20 );
