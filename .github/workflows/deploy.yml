@@ -1,12 +1,18 @@
-# Zet thema + plugin op de server.
-#  - push naar `main`          -> staging (team bekijkt het daar)
+# Zet thema + plugin op de server (Cloud86).
+#  - push naar `main`          -> staging (de testsite)
 #  - handmatig "Run workflow"  -> kies staging of productie
 #
-# Alleen code gaat via Git. Pagina's, rooster en media beheer je in wp-admin
-# (en kopieer je met de staging-knop van je host of WP Migrate).
+# Alleen code gaat via Git. Pagina's, rooster en media beheer je in wp-admin.
 #
-# Benodigde secrets (Settings > Secrets and variables > Actions), per environment:
-#   SSH_HOST, SSH_USER, SSH_KEY (private key), WP_PATH (bijv. /home/icf/public_html)
+# Secrets (Settings > Secrets and variables > Actions):
+#   SSH_HOST  IP-adres of servernaam, bijv. 45.82.191.142
+#   SSH_PORT  (optioneel) SSH-poort, standaard 22
+#   SSH_USER  systeemgebruiker uit Plesk
+#   SSH_KEY   de geheime deploy-sleutel (hele inhoud van het bestand)
+#   WP_PATH   map van de WordPress-site, gezien vanaf de thuismap van SSH_USER,
+#             bijv. icf-test.45-82-191-142.sslip.io  (of httpdocs voor icfede.nl)
+# Zet ze als Repository secret voor de testsite. Voor productie maak je straks een
+# environment "productie" met eigen secrets; die gaan dan voor.
 
 name: Deploy
 
@@ -21,12 +27,14 @@ on:
         options: [staging, productie]
         default: staging
 
+concurrency: deploy-${{ github.event_name == 'push' && 'staging' || inputs.omgeving }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: ${{ github.event_name == 'push' && 'staging' || inputs.omgeving }}
     env:
-      SERVER_INGESTELD: ${{ secrets.SSH_HOST != '' }}
+      SERVER_INGESTELD: ${{ secrets.SSH_HOST != '' && secrets.SSH_KEY != '' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -36,21 +44,33 @@ jobs:
       - name: Nog geen server ingesteld?
         if: env.SERVER_INGESTELD != 'true'
         run: |
-          echo "::notice::Nog geen SSH-gegevens voor deze omgeving. Alleen de PHP-controle is gedaan; er is niets geüpload."
+          echo "::notice::Nog geen SSH-gegevens. Alleen de PHP-controle is gedaan; er is niets geüpload."
 
-      - name: SSH-sleutel klaarzetten
+      - name: SSH klaarzetten
         if: env.SERVER_INGESTELD == 'true'
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_deploy
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_deploy
           chmod 600 ~/.ssh/id_deploy
-          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+          ssh-keyscan -p "${SSH_PORT:-22}" -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
 
       - name: Thema en plugin uploaden
         if: env.SERVER_INGESTELD == 'true'
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          WP_PATH: ${{ secrets.WP_PATH }}
         run: |
+          set -euo pipefail
+          ssh_server() { ssh -i ~/.ssh/id_deploy -p "${SSH_PORT:-22}" -o BatchMode=yes "$SSH_USER@$SSH_HOST" "$@"; }
+          # Werkt ook op een afgeschermde (chroot) SSH-omgeving: alleen tar, mkdir, rm en mv nodig.
           for dir in themes/icf-ede plugins/icf-ede-bijeenkomsten; do
-            rsync -az --delete -e "ssh -i ~/.ssh/id_deploy" \
-              "wp-content/$dir/" \
-              "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WP_PATH }}/wp-content/$dir/"
+            doel="$WP_PATH/wp-content/$dir"
+            tar -C "wp-content/$dir" -czf - . | ssh_server "set -e; rm -rf '$doel.nieuw'; mkdir -p '$doel.nieuw'; tar -xzf - -C '$doel.nieuw'; rm -rf '$doel.oud'; if [ -d '$doel' ]; then mv '$doel' '$doel.oud'; fi; mv '$doel.nieuw' '$doel'; rm -rf '$doel.oud'"
+            echo "✓ $dir"
           done
