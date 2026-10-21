@@ -6,7 +6,7 @@ Description: Warm, eigentijds blokthema voor de Interculturele Christelijke Fami
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Version: 1.9.0
+Version: 1.9.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: icf-ede
@@ -22,7 +22,7 @@ body { -webkit-font-smoothing: antialiased; }
 
 /* Klein label boven een kop */
 .icf-label {
-	font-size: .78rem !important; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+	font-size: 1rem !important; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
 	color: var(--wp--preset--color--paars); margin-bottom: .4rem !important;
 }
 
@@ -104,7 +104,7 @@ body { -webkit-font-smoothing: antialiased; }
 	content: counter(stap); display: inline-grid; place-items: center; width: 1.7em; height: 1.7em; margin-inline-end: .5em;
 	border-radius: 50%; background: var(--wp--preset--color--paars); color: #fff; font-size: .8em; vertical-align: .1em;
 }
-.icf-stap h3 { margin-top: 1rem; }
+.icf-stap h3 { margin-top: 1rem; font-size: 1.5rem; }
 .icf-stap p { color: color-mix(in srgb, var(--wp--preset--color--groen-donker) 78%, transparent); }
 
 /* ---------- Missie (foto + tekst) ---------- */
@@ -172,7 +172,7 @@ body { -webkit-font-smoothing: antialiased; }
 .icf-rooster .icf-dag b { display: block; font-family: var(--wp--preset--font-family--koppen); font-size: 1.8rem; color: var(--wp--preset--color--groen); }
 .icf-rooster .icf-dag span { font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; }
 .icf-rooster .icf-info { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
-.icf-rooster .icf-tijd { font-weight: 700; }
+.icf-rooster .icf-tijd { font-weight: 600; font-size: 1.2rem; }
 .icf-rooster .icf-plek, .icf-rooster .icf-plek a { color: inherit; opacity: .8; font-size: .92rem; }
 .icf-rooster .icf-opm { display: inline-block; width: fit-content; background: color-mix(in srgb, var(--wp--preset--color--lila) 30%, transparent); padding: .05rem .5rem; border-radius: 6px; font-size: .82rem; font-weight: 600; }
 .icf-leeg { opacity: .7; font-style: italic; }
@@ -196,7 +196,7 @@ body { -webkit-font-smoothing: antialiased; }
 }
 @media (max-width: 600px) {
 	.icf-stappen { gap: 1rem 0.75rem !important; }
-	.icf-stap h3 { font-size: 1.05rem; }
+	.icf-stap h3 { font-size: 1.25rem; }
 	.icf-stap p { font-size: .92rem; }
 }
 
