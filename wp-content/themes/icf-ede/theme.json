@@ -9,19 +9,14 @@
 			"defaultGradients": false,
 			"palette": [
 				{
-					"slug": "room",
-					"name": "Room",
-					"color": "#FFF9F1"
-				},
-				{
 					"slug": "creme",
-					"name": "Crème (logo)",
-					"color": "#FFF0DD"
+					"name": "Crème (basis)",
+					"color": "#FCF0DE"
 				},
 				{
-					"slug": "salie",
-					"name": "Salie",
-					"color": "#E3EBDD"
+					"slug": "creme-donker",
+					"name": "Crème donker (vlakken)",
+					"color": "#F5E3C5"
 				},
 				{
 					"slug": "wit",
@@ -29,29 +24,34 @@
 					"color": "#FFFFFF"
 				},
 				{
-					"slug": "groen",
-					"name": "Groen (logo)",
-					"color": "#395A45"
+					"slug": "bosgroen",
+					"name": "Bosgroen (primair)",
+					"color": "#385B47"
 				},
 				{
-					"slug": "groen-donker",
-					"name": "Groen donker",
-					"color": "#23362A"
+					"slug": "salie",
+					"name": "Salie (secundair)",
+					"color": "#658960"
 				},
 				{
-					"slug": "groen-licht",
-					"name": "Groen licht (logo)",
-					"color": "#6A8F65"
+					"slug": "terracotta",
+					"name": "Terracotta (accent)",
+					"color": "#C4623F"
 				},
 				{
-					"slug": "paars",
-					"name": "Paars (accent)",
-					"color": "#8E5A9B"
+					"slug": "zonnegoud",
+					"name": "Zonnegoud (accent)",
+					"color": "#E0A63B"
 				},
 				{
-					"slug": "lila",
-					"name": "Lila (accent op donker)",
-					"color": "#D7BEDF"
+					"slug": "lucht",
+					"name": "Lucht (accent)",
+					"color": "#86B5B0"
+				},
+				{
+					"slug": "inkt",
+					"name": "Inkt (tekst)",
+					"color": "#1F2B24"
 				}
 			],
 			"custom": false,
@@ -105,18 +105,18 @@
 			"fontFamilies": [
 				{
 					"slug": "koppen",
-					"name": "Koppen (Fredoka)",
-					"fontFamily": "Fredoka, 'Segoe UI Variable Display', 'Avenir Next', 'SF Pro Display', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Arabic', sans-serif"
+					"name": "Koppen (Poppins)",
+					"fontFamily": "Poppins, 'Segoe UI Variable Display', 'Avenir Next', 'SF Pro Display', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Arabic', sans-serif"
 				},
 				{
 					"slug": "tekst",
-					"name": "Tekst (Fredoka)",
-					"fontFamily": "Fredoka, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Arabic', 'Helvetica Neue', Arial, sans-serif"
+					"name": "Tekst (Poppins)",
+					"fontFamily": "Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Arabic', 'Helvetica Neue', Arial, sans-serif"
 				},
 				{
 					"slug": "accent",
-					"name": "Accent (serif)",
-					"fontFamily": "'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Noto Naskh Arabic', serif"
+					"name": "Citaat (Poppins Light Italic)",
+					"fontFamily": "Poppins, Arial, 'Noto Naskh Arabic', sans-serif"
 				}
 			],
 			"fontSizes": [
@@ -175,8 +175,8 @@
 	},
 	"styles": {
 		"color": {
-			"background": "var(--wp--preset--color--room)",
-			"text": "var(--wp--preset--color--groen-donker)"
+			"background": "var(--wp--preset--color--creme)",
+			"text": "var(--wp--preset--color--inkt)"
 		},
 		"spacing": {
 			"padding": {
@@ -193,18 +193,18 @@
 		"elements": {
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--groen)"
+					"text": "var(--wp--preset--color--bosgroen)"
 				}
 			},
 			"heading": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--koppen)",
-					"fontWeight": "600",
+					"fontWeight": "700",
 					"lineHeight": "1.08",
 					"letterSpacing": "-0.01em"
 				},
 				"color": {
-					"text": "var(--wp--preset--color--groen)"
+					"text": "var(--wp--preset--color--bosgroen)"
 				}
 			},
 			"h1": {
@@ -219,13 +219,14 @@
 			},
 			"h3": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--groot)"
+					"fontSize": "var(--wp--preset--font-size--groot)",
+					"fontWeight": "500"
 				}
 			},
 			"button": {
 				"color": {
-					"background": "var(--wp--preset--color--groen)",
-					"text": "var(--wp--preset--color--wit)"
+					"background": "var(--wp--preset--color--terracotta)",
+					"text": "var(--wp--preset--color--creme)"
 				},
 				"border": {
 					"radius": "999px"
@@ -239,11 +240,12 @@
 					}
 				},
 				"typography": {
-					"fontWeight": "600"
+					"fontWeight": "700",
+					"fontSize": "1.2rem"
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--groen-donker)"
+						"background": "var(--wp--preset--color--bosgroen)"
 					}
 				}
 			}
@@ -258,12 +260,12 @@
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--koppen)",
 					"fontSize": "var(--wp--preset--font-size--groot)",
-					"fontWeight": "600"
+					"fontWeight": "700"
 				},
 				"elements": {
 					"link": {
 						"color": {
-							"text": "var(--wp--preset--color--groen-donker)"
+							"text": "var(--wp--preset--color--bosgroen)"
 						},
 						"typography": {
 							"textDecoration": "none"
@@ -274,12 +276,14 @@
 			"core/quote": {
 				"border": {
 					"left": {
-						"color": "var(--wp--preset--color--lila)",
+						"color": "var(--wp--preset--color--salie)",
 						"width": "4px"
 					}
 				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--accent)"
+					"fontFamily": "var(--wp--preset--font-family--accent)",
+					"fontStyle": "italic",
+					"fontWeight": "300"
 				}
 			}
 		}

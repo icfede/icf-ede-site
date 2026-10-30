@@ -1,9 +1,9 @@
 import math, os
 # Tekent de illustraties (visie, missie, kernwaarden) in de kleuren van het logo. Draai: python3 playground/teken-illustraties.py
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "wp-content", "themes", "icf-ede", "assets", "illustraties")
-ROOM, ZAND, TERRA, HON, OLIJF, KOF = "#FFF9F1", "#FFF0DD", "#6A8F65", "#E7AE3F", "#395A45", "#23362A"
-PAARS, LILA = "#8E5A9B", "#D7BEDF"  # paarse accenten, spaarzaam gebruikt
-HONL, TERRAL, OLIJFL, OLIJFLL = "#F5D48A", "#A9C29F", "#6A8F65", "#8FB089"
+ROOM, ZAND, TERRA, HON, OLIJF, KOF = "#FCF0DE", "#F5E3C5", "#658960", "#E0A63B", "#385B47", "#1F2B24"
+PAARS, LILA = "#C4623F", "#86B5B0"  # accenten uit de huisstijl: terracotta en lucht
+HONL, TERRAL, OLIJFL, OLIJFLL = "#F0CB7E", "#86B5B0", "#658960", "#8FAE89"
 S = 'stroke="%s" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"' % KOF
 
 def svg(vb, body, title):

@@ -10,18 +10,18 @@ defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/inc/teksten.php';
 
 /*
- * Lettertype Fredoka via Bunny Fonts: een Europese, privacyvriendelijke kopie van Google Fonts
- * (geen IP-adressen naar Google, dus geen cookiemelding nodig). Fredoka heeft geen Arabisch
+ * Lettertype Poppins (huisstijl) via Bunny Fonts: een Europese, privacyvriendelijke kopie van Google
+ * Fonts (geen IP-adressen naar Google, dus geen cookiemelding nodig). Poppins heeft geen Arabisch
  * schrift; Farsi en Arabisch gebruiken hun eigen lettertype (zie style.css).
  */
-const ICF_FREDOKA_URL = 'https://fonts.bunny.net/css?family=fredoka:300,400,500,600,700&display=swap';
+const ICF_LETTER_URL = 'https://fonts.bunny.net/css?family=poppins:300,300i,400,400i,500,600,700&display=swap';
 
 add_action(
 	'after_setup_theme',
 	function () {
 		load_theme_textdomain( 'icf-ede', get_template_directory() . '/languages' );
 		add_theme_support( 'editor-styles' );
-		add_editor_style( array( ICF_FREDOKA_URL, 'style.css' ) );
+		add_editor_style( array( ICF_LETTER_URL, 'style.css' ) );
 	}
 );
 
@@ -29,8 +29,8 @@ add_action(
 	'wp_enqueue_scripts',
 	function () {
 		$theme = wp_get_theme();
-		wp_enqueue_style( 'icf-fredoka', ICF_FREDOKA_URL, array(), null );
-		wp_enqueue_style( 'icf-ede', get_stylesheet_uri(), array( 'icf-fredoka' ), $theme->get( 'Version' ) );
+		wp_enqueue_style( 'icf-letter', ICF_LETTER_URL, array(), null );
+		wp_enqueue_style( 'icf-ede', get_stylesheet_uri(), array( 'icf-letter' ), $theme->get( 'Version' ) );
 	}
 );
 

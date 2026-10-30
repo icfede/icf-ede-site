@@ -6,7 +6,7 @@ Description: Warm, eigentijds blokthema voor de Interculturele Christelijke Fami
 Requires at least: 6.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Version: 1.11.0
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: icf-ede
@@ -17,13 +17,13 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body { -webkit-font-smoothing: antialiased; }
 :where(a) { text-underline-offset: .18em; text-decoration-thickness: 1px; }
 :where(a:hover) { text-decoration-thickness: 2px; }
-:focus-visible { outline: 3px solid var(--wp--preset--color--paars); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 3px solid var(--wp--preset--color--terracotta); outline-offset: 3px; border-radius: 4px; }
 :where(h1, h2, h3) { text-wrap: balance; }
 
 /* Klein label boven een kop */
 .icf-label {
 	font-size: 1.15rem !important; font-weight: 600; letter-spacing: .07em; text-transform: uppercase;
-	color: var(--wp--preset--color--paars); margin-bottom: .4rem !important;
+	color: var(--wp--preset--color--bosgroen); margin-bottom: .4rem !important;
 }
 
 /* ---------- Header: vast bovenaan, licht doorschijnend ---------- */
@@ -33,24 +33,24 @@ body { -webkit-font-smoothing: antialiased; }
 .admin-bar .wp-site-blocks > .wp-block-template-part:first-child { top: 32px; }
 @media (max-width: 782px) { .admin-bar .wp-site-blocks > header:first-child { top: 0; } }
 .icf-header {
-	background: color-mix(in srgb, var(--wp--preset--color--room) 86%, transparent);
+	background: color-mix(in srgb, var(--wp--preset--color--creme) 86%, transparent);
 	-webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
-	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--groen-donker) 8%, transparent);
+	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--bosgroen) 8%, transparent);
 }
 .icf-header .wp-block-navigation a { font-weight: 600; }
-.icf-header .wp-block-navigation a:hover { color: var(--wp--preset--color--paars); }
+.icf-header .wp-block-navigation a:hover { color: var(--wp--preset--color--terracotta); }
 
 /* ---------- Taalbalk (bovenaan elke pagina) ---------- */
 .icf-taalbalk-nav { display: flex; align-items: center; justify-content: center; gap: .6rem; flex-wrap: wrap; }
-.icf-taalbalk-nav .icf-wereld { flex: none; color: var(--wp--preset--color--lila); }
+.icf-taalbalk-nav .icf-wereld { flex: none; color: var(--wp--preset--color--zonnegoud); }
 .icf-taalbalk-nav ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem; margin: 0; padding: 0; }
 .icf-taalbalk-nav a {
 	display: inline-block; padding: .3rem .85rem; border-radius: 999px; line-height: 1.3;
-	color: var(--wp--preset--color--room); text-decoration: none; font-weight: 600; font-size: 1.05rem;
+	color: var(--wp--preset--color--creme); text-decoration: none; font-weight: 600; font-size: 1.05rem;
 	border: 1px solid rgb(255 255 255 / .28); transition: background .15s, color .15s;
 }
 .icf-taalbalk-nav a:hover { background: rgb(255 255 255 / .14); }
-.icf-taalbalk-nav a.is-actief { background: var(--wp--preset--color--lila); border-color: var(--wp--preset--color--lila); color: var(--wp--preset--color--groen-donker); }
+.icf-taalbalk-nav a.is-actief { background: var(--wp--preset--color--zonnegoud); border-color: var(--wp--preset--color--zonnegoud); color: var(--wp--preset--color--inkt); }
 .icf-taalbalk-nav a:lang(fa), .icf-taalbalk-nav a:lang(ar) { font-family: Tahoma, 'Segoe UI', 'Noto Sans Arabic', sans-serif; font-size: 1.1rem; }
 @media (max-width: 480px) {
 	/* Alle vier de talen moeten altijd zichtbaar blijven: liever twee regels dan een taal die buiten beeld valt. */
@@ -62,9 +62,10 @@ body { -webkit-font-smoothing: antialiased; }
 }
 @media (max-width: 360px) { .icf-taalbalk-nav .icf-wereld { display: none; } }
 
-/* Links: groen, bij aanwijzen paars (accent) */
-.wp-block-post-content a:not(.wp-element-button):hover, .icf-footer a:hover { color: var(--wp--preset--color--paars); }
-.icf-footer a:hover { color: var(--wp--preset--color--lila); }
+/* Links: bosgroen, bij aanwijzen terracotta (accent) */
+.wp-block-post-content a:not(.wp-element-button):hover, .icf-footer a:hover { color: var(--wp--preset--color--terracotta); }
+.icf-footer a:hover { color: var(--wp--preset--color--zonnegoud); }
+.icf-footer a, .icf-missie a { color: var(--wp--preset--color--creme); }
 
 /* ---------- Logo ---------- */
 .icf-logo { display: inline-flex; line-height: 0; }
@@ -82,12 +83,12 @@ body { -webkit-font-smoothing: antialiased; }
 /* Banner niet hoger dan de tekst nodig heeft (geldt ook voor bestaande homepagina's) */
 .icf-hero.wp-block-cover { min-height: 0 !important; padding-top: clamp(2.5rem, 6vw, 4.5rem) !important; padding-bottom: clamp(2.5rem, 6vw, 4.5rem) !important; }
 .icf-hero .wp-block-cover__inner-container > * { margin-inline-start: 0 !important; margin-inline-end: auto !important; }
-.icf-hero .icf-label { color: var(--wp--preset--color--lila); }
+.icf-hero .icf-label { color: var(--wp--preset--color--zonnegoud); }
 .icf-hero .icf-hero-titel { color: #fff; max-width: 13ch; margin-top: 0; }
 .icf-hero .icf-hero-tekst { color: rgb(255 255 255 / .9); max-width: 46ch; }
 .icf-hero .icf-volgende { background: rgb(255 255 255 / .12); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgb(255 255 255 / .22); width: fit-content; max-width: 100%; }
 .icf-licht .wp-block-button__link { color: #fff !important; border-color: rgb(255 255 255 / .7) !important; }
-.icf-licht .wp-block-button__link:hover { background: #fff !important; color: var(--wp--preset--color--groen-donker) !important; }
+.icf-licht .wp-block-button__link:hover { background: #fff !important; color: var(--wp--preset--color--bosgroen) !important; }
 
 /* ---------- Foto's ---------- */
 .icf-foto { margin: 0; overflow: hidden; border-radius: 22px; }
@@ -102,17 +103,17 @@ body { -webkit-font-smoothing: antialiased; }
 .icf-stap { counter-increment: stap; }
 .icf-stap h3::before {
 	content: counter(stap); display: inline-grid; place-items: center; width: 1.7em; height: 1.7em; margin-inline-end: .5em;
-	border-radius: 50%; background: var(--wp--preset--color--paars); color: #fff; font-size: .8em; vertical-align: .1em;
+	border-radius: 50%; background: var(--wp--preset--color--zonnegoud); color: var(--wp--preset--color--inkt); font-size: .8em; vertical-align: .1em;
 }
 .icf-stap h3 { margin-top: 1rem; font-size: 1.7rem; }
-.icf-stap p { color: color-mix(in srgb, var(--wp--preset--color--groen-donker) 78%, transparent); }
+.icf-stap p { color: color-mix(in srgb, var(--wp--preset--color--inkt) 85%, transparent); }
 
 /* ---------- Missie (foto + tekst) ---------- */
-.icf-missie { border-radius: 28px; overflow: hidden; background: var(--wp--preset--color--groen); color: var(--wp--preset--color--room); }
+.icf-missie { border-radius: 28px; overflow: hidden; background: var(--wp--preset--color--bosgroen); color: var(--wp--preset--color--creme); }
 .icf-missie .wp-block-media-text__content { padding: clamp(1.5rem, 5vw, 4rem) !important; }
 .icf-missie h2 { color: #fff; }
-.icf-missie .icf-label { color: var(--wp--preset--color--lila); }
-.icf-missie a { color: var(--wp--preset--color--lila); font-weight: 600; }
+.icf-missie .icf-label { color: var(--wp--preset--color--zonnegoud); }
+.icf-missie a { font-weight: 600; }
 .icf-missie .wp-block-media-text__media { min-height: 360px; }
 
 /* ---------- Visie, missie, kernwaarden (getekende illustraties) ---------- */
@@ -131,8 +132,8 @@ body { -webkit-font-smoothing: antialiased; }
 }
 .icf-waarden { gap: var(--wp--preset--spacing--40) !important; margin-top: var(--wp--preset--spacing--40) !important; }
 .icf-waarde {
-	background: var(--wp--preset--color--wit); border-radius: 22px; padding: 1.5rem 1.5rem 1.6rem;
-	box-shadow: 0 1px 2px rgb(35 54 42 / .05), 0 12px 32px rgb(35 54 42 / .07);
+	background: var(--wp--preset--color--creme-donker); border-radius: 22px; padding: 1.5rem 1.5rem 1.6rem;
+	box-shadow: 0 1px 2px rgb(31 43 36 / .05), 0 12px 32px rgb(31 43 36 / .07);
 }
 .icf-waarde-icoon img { display: block; width: 76px; height: auto; }
 .icf-waarde h3 { margin-top: .9rem; }
@@ -140,8 +141,8 @@ body { -webkit-font-smoothing: antialiased; }
 
 /* ---------- Kaarten ---------- */
 .icf-kaart {
-	background: var(--wp--preset--color--wit); border-radius: 22px; overflow: hidden;
-	box-shadow: 0 1px 2px rgb(35 54 42 / .05), 0 12px 32px rgb(35 54 42 / .07);
+	background: var(--wp--preset--color--creme-donker); border-radius: 22px; overflow: hidden;
+	box-shadow: 0 1px 2px rgb(31 43 36 / .05), 0 12px 32px rgb(31 43 36 / .07);
 	display: flex; flex-direction: column;
 }
 .icf-kaart .icf-foto { border-radius: 0; }
@@ -153,35 +154,35 @@ body { -webkit-font-smoothing: antialiased; }
 /* ---------- Bijeenkomsten (plugin-output) ---------- */
 .icf-volgende {
 	display: flex; flex-wrap: wrap; gap: .25rem 1rem; align-items: baseline;
-	background: var(--wp--preset--color--groen-donker); color: var(--wp--preset--color--room);
+	background: var(--wp--preset--color--bosgroen); color: var(--wp--preset--color--creme);
 	padding: 1rem 1.25rem; border-radius: 16px; margin: 0;
 }
 .icf-volgende a { color: inherit; }
-.icf-volgende strong { color: var(--wp--preset--color--lila); text-transform: uppercase; letter-spacing: .08em; font-size: .95rem; }
+.icf-volgende strong { color: var(--wp--preset--color--zonnegoud); text-transform: uppercase; letter-spacing: .08em; font-size: .95rem; }
 .icf-volgende .icf-volgende-datum { font-family: var(--wp--preset--font-family--koppen); font-weight: 700; font-size: 1.3rem; }
 
 .icf-rooster { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
 .icf-rooster li {
 	display: grid; grid-template-columns: 4.2rem 1fr; gap: 1rem; align-items: center;
-	background: var(--wp--preset--color--wit); border-radius: 16px; padding: .8rem 1rem;
+	background: var(--wp--preset--color--creme); border-radius: 16px; padding: .8rem 1rem;
 	transition: transform .2s ease;
 }
 .icf-rooster li:hover { transform: translateX(4px); }
-.icf-rooster li.is-afwijkend { background: color-mix(in srgb, var(--wp--preset--color--lila) 14%, var(--wp--preset--color--wit)); }
-.icf-rooster .icf-dag { text-align: center; line-height: 1.05; }
-.icf-rooster .icf-dag b { display: block; font-family: var(--wp--preset--font-family--koppen); font-size: 1.8rem; color: var(--wp--preset--color--groen); }
+.icf-rooster li.is-afwijkend { background: color-mix(in srgb, var(--wp--preset--color--zonnegoud) 22%, var(--wp--preset--color--creme)); }
+.icf-rooster .icf-dag { text-align: center; line-height: 1.05; background: var(--wp--preset--color--zonnegoud); color: var(--wp--preset--color--inkt); border-radius: 14px; padding: .45rem .2rem; }
+.icf-rooster .icf-dag b { display: block; font-family: var(--wp--preset--font-family--koppen); font-size: 1.8rem; color: var(--wp--preset--color--inkt); }
 .icf-rooster .icf-dag span { font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; }
 .icf-rooster .icf-info { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
 .icf-rooster .icf-tijd { font-weight: 600; font-size: 1.35rem; }
 .icf-rooster .icf-plek, .icf-rooster .icf-plek a { color: inherit; opacity: .8; font-size: 1.05rem; }
-.icf-rooster .icf-opm { display: inline-block; width: fit-content; background: color-mix(in srgb, var(--wp--preset--color--lila) 30%, transparent); padding: .05rem .5rem; border-radius: 6px; font-size: .95rem; font-weight: 600; }
+.icf-rooster .icf-opm { display: inline-block; width: fit-content; background: color-mix(in srgb, var(--wp--preset--color--zonnegoud) 30%, transparent); padding: .05rem .5rem; border-radius: 6px; font-size: .95rem; font-weight: 600; }
 .icf-leeg { opacity: .7; font-style: italic; }
 
 /* ---------- Geven ---------- */
 .icf-qr { background: var(--wp--preset--color--wit); padding: 12px; border-radius: 16px; width: 168px; height: 168px; display: block; }
 
 /* ---------- Footer ---------- */
-.icf-footer a { color: var(--wp--preset--color--room); }
+.icf-footer a { color: var(--wp--preset--color--creme); }
 .icf-footer .icf-klein { font-size: 1rem; opacity: .8; }
 
 /* ---------- Klein scherm ---------- */
