@@ -17,6 +17,6 @@ key: contact
 
 برای اطلاعات بیشتر دربارهٔ فعالیت‌ها و امور مالی ما، گزارش‌های سالانه (به زبان هلندی) را بخوانید.
 
-- [گزارش سالانهٔ 2025](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2025.pdf)
-- [گزارش سالانهٔ 2024](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2024.pdf)
-- [گزارش سالانهٔ 2023](https://icfede.nl/assets/jaarverslagen/ICF-Ede-Jaarverslag-2023.pdf)
+- [گزارش سالانهٔ 2025](/wp-content/uploads/2026/11/ICF-Ede-Jaarverslag-2025.pdf)
+- [گزارش سالانهٔ 2024](/wp-content/uploads/2026/11/ICF-Ede-Jaarverslag-2024.pdf)
+- [گزارش سالانهٔ 2023](/wp-content/uploads/2026/11/ICF-Ede-Jaarverslag-2023.pdf)

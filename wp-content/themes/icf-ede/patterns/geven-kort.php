@@ -11,7 +11,7 @@ $icf_betaal = 'https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xVZttsc1SC2WO
 ?>
 <!-- wp:group {"className":"icf-geven-kort","layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
 <div class="wp-block-group icf-geven-kort"><!-- wp:html -->
-<a href="<?php echo esc_url( $icf_betaal ); ?>" target="_blank" rel="noopener"><img class="icf-qr" src="https://icfede.nl/assets/images/qr-code.svg" alt="<?php echo esc_attr( icf_pt( 'geven_qr_alt' ) ); ?>" width="112" height="112"></a>
+<a href="<?php echo esc_url( $icf_betaal ); ?>" target="_blank" rel="noopener"><img class="icf-qr" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/qr-geven.svg' ); ?>" alt="<?php echo esc_attr( icf_pt( 'geven_qr_alt' ) ); ?>" width="112" height="112"></a>
 <!-- /wp:html -->
 
 <!-- wp:buttons -->

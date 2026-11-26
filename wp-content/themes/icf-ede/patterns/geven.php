@@ -13,7 +13,7 @@ $icf_betaal = 'https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xVZttsc1SC2WO
 <div class="wp-block-group alignwide icf-geven" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"220px"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:220px"><!-- wp:html -->
-<a href="<?php echo esc_url( $icf_betaal ); ?>" target="_blank" rel="noopener"><img class="icf-qr" src="https://icfede.nl/assets/images/qr-code.svg" alt="<?php echo esc_attr( icf_pt( 'geven_qr_alt' ) ); ?>" width="168" height="168"></a>
+<a href="<?php echo esc_url( $icf_betaal ); ?>" target="_blank" rel="noopener"><img class="icf-qr" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/qr-geven.svg' ); ?>" alt="<?php echo esc_attr( icf_pt( 'geven_qr_alt' ) ); ?>" width="168" height="168"></a>
 <!-- /wp:html --></div>
 <!-- /wp:column -->
 
