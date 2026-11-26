@@ -1,6 +1,6 @@
 # Zet thema + plugin op de server (Cloud86).
-#  - push naar `main`          -> staging (de testsite)
-#  - handmatig "Run workflow"  -> kies staging of productie
+#  - push naar `main`          -> testsite én icfede.nl
+#  - handmatig "Run workflow"  -> kies een van beide
 #
 # Alleen code gaat via Git. Pagina's, rooster en media beheer je in wp-admin.
 #
@@ -9,10 +9,7 @@
 #   SSH_PORT  (optioneel) SSH-poort, standaard 22
 #   SSH_USER  systeemgebruiker uit Plesk
 #   SSH_KEY   de geheime deploy-sleutel (hele inhoud van het bestand)
-#   WP_PATH   map van de WordPress-site, gezien vanaf de thuismap van SSH_USER,
-#             bijv. icf-test.45-82-191-142.sslip.io  (of httpdocs voor icfede.nl)
-# Zet ze als Repository secret voor de testsite. Voor productie maak je straks een
-# environment "productie" met eigen secrets; die gaan dan voor.
+# De mappen van de sites (gezien vanaf de thuismap van SSH_USER) staan hieronder bij `map`.
 
 name: Deploy
 
@@ -27,12 +24,14 @@ on:
         options: [staging, productie]
         default: staging
 
-concurrency: deploy-${{ github.event_name == 'push' && 'staging' || inputs.omgeving }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ github.event_name == 'push' && 'staging' || inputs.omgeving }}
+    strategy:
+      fail-fast: false
+      matrix:
+        omgeving: ${{ github.event_name == 'push' && fromJSON('["staging","productie"]') || fromJSON(format('["{0}"]', inputs.omgeving)) }}
+    concurrency: deploy-${{ matrix.omgeving }}
     env:
       SERVER_INGESTELD: ${{ secrets.SSH_HOST != '' && secrets.SSH_KEY != '' }}
     steps:
@@ -64,7 +63,7 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_PORT: ${{ secrets.SSH_PORT }}
           SSH_USER: ${{ secrets.SSH_USER }}
-          WP_PATH: ${{ secrets.WP_PATH }}
+          WP_PATH: ${{ matrix.omgeving == 'productie' && 'httpdocs' || 'icf-test.45-82-191-142.sslip.io' }}
         run: |
           set -euo pipefail
           ssh_server() { ssh -i ~/.ssh/id_deploy -p "${SSH_PORT:-22}" -o BatchMode=yes "$SSH_USER@$SSH_HOST" "$@"; }
