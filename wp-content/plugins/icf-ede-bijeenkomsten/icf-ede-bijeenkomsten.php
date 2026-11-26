@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ICF Ede – Bijeenkomsten
  * Description: Rooster van bijeenkomsten (verleden datums verdwijnen vanzelf), reeksen in één keer toevoegen, en vertaalbare teksten voor header en footer. Werkt met Polylang.
- * Version: 1.4.0
+ * Version: 1.5.0
  * Requires at least: 6.6
  * Requires PHP: 7.4
  * Author: ICF Ede
@@ -581,5 +581,52 @@ add_action(
 })();
 </script>
 		<?php
+	}
+);
+
+/* -----------------------------------------------------------------
+ * Verborgen pagina's: adres begint met "intern-".
+ * Alleen te vinden via de link: niet in zoekmachines, sitemap of zoekresultaten.
+ * ----------------------------------------------------------------- */
+function icf_is_intern( $post ) {
+	$post = get_post( $post );
+	return $post && 'page' === $post->post_type && 0 === strpos( $post->post_name, 'intern-' );
+}
+
+add_filter(
+	'wp_robots',
+	function ( $robots ) {
+		if ( is_page() && icf_is_intern( get_queried_object_id() ) ) {
+			$robots['noindex']  = true;
+			$robots['nofollow'] = true;
+			unset( $robots['max-image-preview'] );
+		}
+		return $robots;
+	}
+);
+
+function icf_interne_ids() {
+	global $wpdb;
+	return array_map( 'intval', $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'page' AND post_name LIKE 'intern-%'" ) );
+}
+
+add_filter(
+	'wp_sitemaps_posts_query_args',
+	function ( $args, $post_type ) {
+		if ( 'page' === $post_type ) {
+			$args['post__not_in'] = array_merge( isset( $args['post__not_in'] ) ? (array) $args['post__not_in'] : array(), icf_interne_ids() );
+		}
+		return $args;
+	},
+	10,
+	2
+);
+
+add_action(
+	'pre_get_posts',
+	function ( $q ) {
+		if ( ! is_admin() && $q->is_main_query() && $q->is_search() ) {
+			$q->set( 'post__not_in', icf_interne_ids() );
+		}
 	}
 );
