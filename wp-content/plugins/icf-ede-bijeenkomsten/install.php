@@ -95,6 +95,7 @@ function icf_installeer( $opties = array() ) {
 	$opt['hide_default'] = true;
 	$opt['force_lang']   = 1;
 	$opt['rewrite']      = true;
+	$opt['redirect_lang'] = 1; // /en/ in plaats van /en/en-home/
 	$opt['browser']      = false; // de ICF-plugin volgt zelf de browsertaal (werkt ook met caching)
 	update_option( 'polylang', $opt );
 	$pll->languages->clean_cache();
